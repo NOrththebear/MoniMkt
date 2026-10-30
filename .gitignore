@@ -1,0 +1,14 @@
+/target
+**/*.rs.bk
+.env
+*.log
+.ckb/
+.toolchains/
+.secrets/
+/build/
+node_modules/
+web/node_modules/
+.next/
+**/.next/
+*.tsbuildinfo
+.DS_Store

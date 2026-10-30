@@ -1,0 +1,40 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/math",
+    "crates/schemas",
+    "crates/market-core",
+    "crates/batcher",
+    "crates/indexer",
+    "crates/scripts/market-type",
+    "crates/scripts/market-state-lock",
+    "crates/scripts/account-type",
+    "crates/scripts/position-type",
+    "crates/scripts/position-lock",
+    "crates/scripts/vault-lock",
+    "crates/scripts/base-token-lock",
+    "crates/scripts/vault-type",
+    "crates/scripts/oracle-type",
+    "crates/scripts/asset-config-type",
+    "crates/scripts/asset-totals-type",
+    "crates/scripts/approval-type",
+    "crates/scripts/config-type",
+    "crates/scripts/market-type-tests",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/monimkt/monimkt"
+
+[workspace.dependencies]
+uint = { version = "0.10.2", default-features = false }
+
+[profile.release]
+overflow-checks = true
+lto = true
+codegen-units = 1
+opt-level = "z"
+panic = "abort"
+strip = "symbols"
