@@ -1,0 +1,8 @@
+[package]
+name = "monimkt-schemas"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Fixed-size Molecule-compatible cell and action schemas for MoniMkt"
+
+[dependencies]

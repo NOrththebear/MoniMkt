@@ -1,0 +1,151 @@
+// MoniMkt v1 fixed-size cell schemas.
+//
+// The Rust codec in crates/schemas follows this layout byte-for-byte. All
+// integers are little-endian. The layout is deliberately fixed-size so a CKB
+// script can parse it without a Molecule code generator.
+
+array Uint32 [byte; 4];
+array Uint64 [byte; 8];
+array Uint128 [byte; 16];
+array Byte32 [byte; 32];
+array CollateralSlots [Uint128; 8];
+
+struct Principal {
+    negative: byte,
+    magnitude: Uint128,
+}
+
+struct MarketState {
+    version: byte,
+    market_id: Byte32,
+    base_asset_id: Byte32,
+    base_decimals: byte,
+    supply_index: Uint128,
+    borrow_index: Uint128,
+    tracking_supply_index: Uint128,
+    tracking_borrow_index: Uint128,
+    total_supply_principal: Uint128,
+    total_borrow_principal: Uint128,
+    total_cash: Uint128,
+    last_accrual_time: Uint64,
+    pause_flags: byte,
+    asset_count: byte,
+    config_hash: Byte32,
+    reserved: Byte32,
+}
+
+struct MarketConfig {
+    version: byte,
+    market_id: Byte32,
+    supply_kink: Uint64,
+    borrow_kink: Uint64,
+    supply_slope_low: Uint64,
+    supply_slope_high: Uint64,
+    supply_base: Uint64,
+    borrow_slope_low: Uint64,
+    borrow_slope_high: Uint64,
+    borrow_base: Uint64,
+    store_front: Uint64,
+    base_borrow_min: Uint128,
+    target_reserves: Uint128,
+    base_min_for_rewards: Uint128,
+    tracking_index_scale: Uint64,
+    base_tracking_supply_speed: Uint64,
+    base_tracking_borrow_speed: Uint64,
+    max_oracle_age: Uint64,
+    max_price_deviation: Uint64,
+    reserved: Byte32,
+}
+
+struct AssetConfig {
+    version: byte,
+    market_id: Byte32,
+    asset_id: Byte32,
+    price_feed_id: Byte32,
+    kind: byte,
+    scale: Uint64,
+    borrow_cf: Uint64,
+    liquidate_cf: Uint64,
+    liquidation_factor: Uint64,
+    supply_cap: Uint128,
+    reserved: Byte32,
+}
+
+struct AssetTotals {
+    version: byte,
+    market_id: Byte32,
+    asset_id: Byte32,
+    total_supplied: Uint128,
+    reserved: Byte32,
+}
+
+struct UserPosition {
+    version: byte,
+    market_id: Byte32,
+    owner_lock_hash: Byte32,
+    principal: Principal,
+    tracking_index: Uint128,
+    tracking_accrued: Uint64,
+    reward_claimed: Uint64,
+    nonce: Uint64,
+    assets_in: Uint32,
+    collateral: CollateralSlots,
+    reserved: Byte32,
+}
+
+struct Account {
+    version: byte,
+    market_id: Byte32,
+    owner_lock_hash: Byte32,
+    nonce: Uint64,
+    flags: byte,
+    reserved: Byte32,
+}
+
+struct Approval {
+    version: byte,
+    market_id: Byte32,
+    owner_lock_hash: Byte32,
+    manager_lock_hash: Byte32,
+    permissions: Uint32,
+    expiry: Uint64,
+    nonce: Uint64,
+    reserved: Byte32,
+}
+
+struct Oracle {
+    version: byte,
+    asset_id: Byte32,
+    price: Uint128,
+    exponent: byte,
+    timestamp: Uint64,
+    confidence: Uint128,
+    publisher_set_hash: Byte32,
+    reserved: Byte32,
+}
+
+struct Pause {
+    version: byte,
+    market_id: Byte32,
+    flags: byte,
+    updated_at: Uint64,
+    reserved: Byte32,
+}
+
+struct Vault {
+    version: byte,
+    market_id: Byte32,
+    asset_id: Byte32,
+    amount: Uint128,
+    reserved: Byte32,
+}
+
+struct Action {
+    tag: byte,
+    asset_index: byte,
+    flags: byte,
+    reserved0: byte,
+    amount: Uint128,
+    min_amount: Uint128,
+    target: Byte32,
+}

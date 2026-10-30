@@ -1,0 +1,9 @@
+[package]
+name = "monimkt-math"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Pure Rust reference math for the MoniMkt CKB lending market"
+
+[dependencies]
+uint.workspace = true
