@@ -1,0 +1,10 @@
+[package]
+name = "monimkt-indexer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Cell-to-view indexer for the MoniMkt market"
+
+[dependencies]
+monimkt-math = { path = "../math" }
+monimkt-schemas = { path = "../schemas" }

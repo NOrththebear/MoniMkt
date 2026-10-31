@@ -1,0 +1,10 @@
+[package]
+name = "monimkt-market-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Pure accounting transitions for the MoniMkt market (host-testable)"
+
+[dependencies]
+monimkt-math = { path = "../math" }
+monimkt-schemas = { path = "../schemas" }

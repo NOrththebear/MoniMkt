@@ -1,0 +1,9 @@
+[package]
+name = "monimkt-batcher"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Intent validation and batch planning for the MoniMkt batcher"
+
+[dependencies]
+monimkt-schemas = { path = "../schemas" }
