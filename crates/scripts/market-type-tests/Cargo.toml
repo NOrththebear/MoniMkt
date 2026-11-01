@@ -1,0 +1,15 @@
+[package]
+name = "monimkt-market-type-tests"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "ckb-testtool integration tests for the market-type script"
+
+[lib]
+path = "src/lib.rs"
+
+[dev-dependencies]
+ckb-testtool = "1.1.1"
+monimkt-market-core = { path = "../../market-core" }
+monimkt-math = { path = "../../math" }
+monimkt-schemas = { path = "../../schemas" }
