@@ -1,0 +1,18 @@
+[package]
+name = "monimkt-market-type"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "MarketState type script for MoniMkt"
+
+[[bin]]
+name = "monimkt-market-type"
+path = "src/main.rs"
+test = false
+doctest = false
+
+[dependencies]
+ckb-std = { version = "1.1.0", default-features = false, features = ["allocator", "ckb-types", "calc-hash", "dummy-atomic"] }
+monimkt-math = { path = "../../math" }
+monimkt-schemas = { path = "../../schemas" }
+monimkt-market-core = { path = "../../market-core" }

@@ -1,0 +1,16 @@
+[package]
+name = "monimkt-position-lock"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Position authorization lock for MoniMkt"
+
+[[bin]]
+name = "monimkt-position-lock"
+path = "src/main.rs"
+test = false
+doctest = false
+
+[dependencies]
+ckb-std = { version = "1.1.0", default-features = false, features = ["allocator", "ckb-types", "calc-hash", "dummy-atomic"] }
+monimkt-schemas = { path = "../../schemas" }

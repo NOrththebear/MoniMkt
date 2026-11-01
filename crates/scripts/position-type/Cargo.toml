@@ -1,0 +1,16 @@
+[package]
+name = "monimkt-position-type"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "User position type script for MoniMkt"
+
+[[bin]]
+name = "monimkt-position-type"
+path = "src/main.rs"
+test = false
+doctest = false
+
+[dependencies]
+ckb-std = { version = "1.1.0", default-features = false, features = ["allocator", "ckb-types", "calc-hash", "dummy-atomic"] }
+monimkt-schemas = { path = "../../schemas" }
