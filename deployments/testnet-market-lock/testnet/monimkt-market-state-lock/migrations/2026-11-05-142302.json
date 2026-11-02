@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-market-state-lock",
+      "tx_hash": "0x0b3f2837364a2f94001ecf6028e9957bf074e8817961fe87755c8ad8c0ded49e",
+      "index": 0,
+      "occupied_capacity": 128800000000,
+      "data_hash": "0xd2c0e06a7dc434fad06d52b32ea3acf6254245ff01981687582e1644bebe436e",
+      "type_id": "0x9a1b42f1c001b18e524ca766f83f8db0da351fdb5d91dc929ae9097499371ba5"
+    }
+  ],
+  "dep_group_recipes": []
+}

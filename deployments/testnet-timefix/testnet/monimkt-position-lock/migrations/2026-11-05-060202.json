@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-position-lock",
+      "tx_hash": "0x35e4ef7cfb92227518a4cbbb7237e606b2a68b74b9a95e8474937fa45c050ec2",
+      "index": 0,
+      "occupied_capacity": 2716000000000,
+      "data_hash": "0x3850c8c2952c153a953d70f33b558500989dc97e6748e22c37a57b5d3ad646b9",
+      "type_id": "0xcf4242a372739fe07e348782f1c5b365e08fbbefbd9eca4494b9c7071adfde90"
+    }
+  ],
+  "dep_group_recipes": []
+}

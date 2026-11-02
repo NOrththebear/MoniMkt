@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-vault-lock",
+      "tx_hash": "0x9a448f8a65c61031c183148a0e4692e3531a4793854189591c3916f37e60dbdb",
+      "index": 0,
+      "occupied_capacity": 2549600000000,
+      "data_hash": "0xc10487b090b9a89c2f4a82e54d93377f30ce65c20f6aa6f35b1582e888e152bd",
+      "type_id": "0x8868ee05f78a75052162ba833cbdd4437d2be9957618287b67030c1b64dfdf51"
+    }
+  ],
+  "dep_group_recipes": []
+}

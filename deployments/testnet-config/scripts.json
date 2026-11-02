@@ -1,0 +1,21 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-config-type": {
+      "codeHash": "0x84f9fb69145250ac3bc7cd6a2c46f6f0405a6d3d3c3b13ec097ce15e8f575e5d",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0xa8eeba5f4df04d88321096df03866702e6a93be3e4deaa5387b8640779811d60",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}

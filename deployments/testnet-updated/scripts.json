@@ -1,0 +1,36 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-market-type": {
+      "codeHash": "0x238267e31e093aa83bdd5937edc082c2ee906ae84c5394f7c5675f178da23c26",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0xdd02f8ae966f55d4306c6958096a2d24882e1a337f58859ffff245bf14ce57e9",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-vault-lock": {
+      "codeHash": "0x8868ee05f78a75052162ba833cbdd4437d2be9957618287b67030c1b64dfdf51",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x9a448f8a65c61031c183148a0e4692e3531a4793854189591c3916f37e60dbdb",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}

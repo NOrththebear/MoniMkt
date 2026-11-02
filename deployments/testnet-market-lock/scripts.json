@@ -1,0 +1,21 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-market-state-lock": {
+      "codeHash": "0x9a1b42f1c001b18e524ca766f83f8db0da351fdb5d91dc929ae9097499371ba5",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x0b3f2837364a2f94001ecf6028e9957bf074e8817961fe87755c8ad8c0ded49e",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}

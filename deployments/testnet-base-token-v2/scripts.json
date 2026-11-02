@@ -1,0 +1,21 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-base-token-lock": {
+      "codeHash": "0xb7cd9a37752b68ac47aab635e884b8c211cb5973aa3e2d5f9a174aac2d4c1f68",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x1b885d13d10ba59e7a1f214cb9bd277951751ed361c4da4c997c4a0be57e94b1",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}

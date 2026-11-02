@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-vault-type",
+      "tx_hash": "0x8d696b4daf41bf6d36f29eb243b5a6bfb548e56da6c6b73fa8f05b74ab2eee2a",
+      "index": 0,
+      "occupied_capacity": 2211200000000,
+      "data_hash": "0xcaf1c2388811809ddaed2ed0b703c2caf1dd7c521dda5df882e9a83ad9a040bd",
+      "type_id": "0x7cb11e5aa57978f74e3d2526a4bbc289fbb04e6e0a7b6cfba145fcc20b31980c"
+    }
+  ],
+  "dep_group_recipes": []
+}

@@ -1,0 +1,11 @@
+[[cells]]
+name = "monimkt-config-type"
+enable_type_id = true
+
+  [cells.location]
+  file = "C:\\Users\\ADMIN\\Desktop\\Projects\\MoniMkt\\build\\testnet-config\\monimkt-config-type"
+
+[lock]
+code_hash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8"
+args = "0xede79962a802b77c55b8418356ecbd11cfbc63f2"
+hash_type = "type"

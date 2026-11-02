@@ -1,0 +1,20 @@
+{
+  "network": "ckb-testnet",
+  "baseAsset": {
+    "name": "Mock RUSD",
+    "standard": "xUDT",
+    "typeScriptHash": "0xe016940e96b9ad2d6505d06996a24f84dbc319ce1a0b0a619aa6af26ce190a3a",
+    "codeHash": "0x25c29dc317811a6f6f3985a7a9ebc4838bd388d19d0feeecf0bcd60f6c0975bb",
+    "hashType": "type",
+    "args": "0x17a32809302cdca3ffdfde54659dc6d0e3e2d7ce6d8e79616cc72e4e4eff6d2c",
+    "decimals": 8,
+    "issuedAmount": "100000000000000",
+    "issueTx": "0xd410b6f5ef2b192ca0bc89a730b035649e01f11775fddaacb8f2b2f2f83d00fb"
+  },
+  "collateral": {
+    "name": "CKB",
+    "kind": "CKB",
+    "decimals": 8
+  },
+  "deployerAddress": "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsq0du7vk92qzka79twzpsdtwe0g3e77x8ush4mfuf"
+}

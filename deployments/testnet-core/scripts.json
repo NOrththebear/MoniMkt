@@ -1,0 +1,96 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-account-type": {
+      "codeHash": "0x5b5c9ef26e0aa0ad5ab42250338b7b4db5710a21226c086f9f0b5a1c3cf02b12",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0xf72f1e264525a5122a3e14b81094a01e64b08534b0faef211520cf533422c98e",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-market-type": {
+      "codeHash": "0xa5e07011102aad92b0c0eab2c07454e5e43b20fdd63e198437fcd432399ec602",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x1a04a7871563df25c1095d7985601e002cc58feb31dcbd89bfdd73e79b121750",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-position-lock": {
+      "codeHash": "0x352d679d711f5d9e37b0f04d7e5ba1f35b3305db0ea438d949b3bb811f72ceea",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x401784df1a084a5544ffc59c136deb46d71fb409e22c032ba5995e32fff6bae9",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-position-type": {
+      "codeHash": "0xa0f58d96515fb400d098e29c0a09d2ff58c8db1cbd64a285eeb7ad71a335bbdc",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0xeddfa8c566ee439c1760ed19c13b21a4aad0d899b7e4f5cb570d69b4917c8f28",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-vault-lock": {
+      "codeHash": "0x7fe6d3e040aa8022b8b24f6023111c628448d47cc9cf1f70e21c63af684fb2d8",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0xcf1c662c81c6016d236023a622ca037c2b106be1eb9cd068a5918b5e8f06a13d",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-vault-type": {
+      "codeHash": "0x7cb11e5aa57978f74e3d2526a4bbc289fbb04e6e0a7b6cfba145fcc20b31980c",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x8d696b4daf41bf6d36f29eb243b5a6bfb548e56da6c6b73fa8f05b74ab2eee2a",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}

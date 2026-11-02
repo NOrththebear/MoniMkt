@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-base-token-lock",
+      "tx_hash": "0x636e2ff2d5eb10ac77ab618bb6ce77f9b374b39e66d749bf163f0fe78bdaee2d",
+      "index": 0,
+      "occupied_capacity": 3231200000000,
+      "data_hash": "0x10a7e7e0bca54e16d774892ae78d58a0e48aac357b09c48dfb6609c06df0479a",
+      "type_id": "0x10c2e4f8913ebb1a556ccc749f64a64d6978eda27ded0e3d3746ceacf7651620"
+    }
+  ],
+  "dep_group_recipes": []
+}

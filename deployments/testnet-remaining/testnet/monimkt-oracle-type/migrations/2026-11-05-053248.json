@@ -1,0 +1,13 @@
+{
+  "cell_recipes": [
+    {
+      "name": "monimkt-oracle-type",
+      "tx_hash": "0x676d2e33ddfa4960e3d9a60b7992416383f62d32dc7d6f3ac3e6a8d59b23dee8",
+      "index": 0,
+      "occupied_capacity": 2054400000000,
+      "data_hash": "0x8029bedd73ecd1c596557927c82b34d127deb709cba3d0df8182c1e84850f26f",
+      "type_id": "0x0bd6c8139235be080d920271ab2afdbee9af6badc78ade2eed661f4c407a2adf"
+    }
+  ],
+  "dep_group_recipes": []
+}

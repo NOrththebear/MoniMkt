@@ -1,0 +1,138 @@
+{
+    "network": "ckb-testnet",
+    "version": "v3-final-r2",
+    "marketId": "0x70e26d96e2b61a1c8e33104ccaf066e18e1e371737b0c4871738874627ba7481",
+    "baseAsset": {
+        "name": "Mock RUSD",
+        "assetId": "0xe016940e96b9ad2d6505d06996a24f84dbc319ce1a0b0a619aa6af26ce190a3a",
+        "decimals": 8,
+        "type": {
+            "codeHash": "0x25c29dc317811a6f6f3985a7a9ebc4838bd388d19d0feeecf0bcd60f6c0975bb",
+            "hashType": "type",
+            "args": "0x17a32809302cdca3ffdfde54659dc6d0e3e2d7ce6d8e79616cc72e4e4eff6d2c"
+        }
+    },
+    "collateralAsset": {
+        "name": "CKB",
+        "assetId": "0x434b420000000000000000000000000000000000000000000000000000000000",
+        "kind": 1,
+        "scale": 100000000
+    },
+    "scripts": {
+        "marketType": {
+            "codeHash": "0x9172f13db28292479142728fbeca4e60bc4b40724cd4791a382ad715b58fda33",
+            "cellDep": "0xcd9d81e249f1398fc6dfc40548cdd0f2f538de4e7ebca7b4a839c28d70b1492f:0"
+        },
+        "configType": {
+            "codeHash": "0x84f9fb69145250ac3bc7cd6a2c46f6f0405a6d3d3c3b13ec097ce15e8f575e5d",
+            "cellDep": "0xa8eeba5f4df04d88321096df03866702e6a93be3e4deaa5387b8640779811d60:0"
+        },
+        "accountType": {
+            "codeHash": "0x5b5c9ef26e0aa0ad5ab42250338b7b4db5710a21226c086f9f0b5a1c3cf02b12",
+            "cellDep": "0xf72f1e264525a5122a3e14b81094a01e64b08534b0faef211520cf533422c98e:0"
+        },
+        "positionType": {
+            "codeHash": "0xa0f58d96515fb400d098e29c0a09d2ff58c8db1cbd64a285eeb7ad71a335bbdc",
+            "cellDep": "0xeddfa8c566ee439c1760ed19c13b21a4aad0d899b7e4f5cb570d69b4917c8f28:0"
+        },
+        "positionLock": {
+            "codeHash": "0xcf4242a372739fe07e348782f1c5b365e08fbbefbd9eca4494b9c7071adfde90",
+            "cellDep": "0x35e4ef7cfb92227518a4cbbb7237e606b2a68b74b9a95e8474937fa45c050ec2:0"
+        },
+        "vaultType": {
+            "codeHash": "0x7cb11e5aa57978f74e3d2526a4bbc289fbb04e6e0a7b6cfba145fcc20b31980c",
+            "cellDep": "0x8d696b4daf41bf6d36f29eb243b5a6bfb548e56da6c6b73fa8f05b74ab2eee2a:0"
+        },
+        "vaultLock": {
+            "codeHash": "0x8868ee05f78a75052162ba833cbdd4437d2be9957618287b67030c1b64dfdf51",
+            "cellDep": "0x9a448f8a65c61031c183148a0e4692e3531a4793854189591c3916f37e60dbdb:0"
+        },
+        "baseTokenLock": {
+            "codeHash": "0xb7cd9a37752b68ac47aab635e884b8c211cb5973aa3e2d5f9a174aac2d4c1f68",
+            "cellDep": "0x1b885d13d10ba59e7a1f214cb9bd277951751ed361c4da4c997c4a0be57e94b1:0"
+        },
+        "oracleType": {
+            "codeHash": "0x0bd6c8139235be080d920271ab2afdbee9af6badc78ade2eed661f4c407a2adf",
+            "cellDep": "0x676d2e33ddfa4960e3d9a60b7992416383f62d32dc7d6f3ac3e6a8d59b23dee8:0"
+        },
+        "assetConfigType": {
+            "codeHash": "0xd20914d2863601569206fce44b94e3ff98e2a7c6453b519ee0e89790ba6ab283",
+            "cellDep": "0x7898b5c1720b5b3a5ec231f03da41614b69e3838578bc3b856fee111fbadd5fc:0"
+        },
+        "assetTotalsType": {
+            "codeHash": "0xef551fc012c9d5f1df7c89e94dd953455567e82e60c955d1c8a060b6a288b4d8",
+            "cellDep": "0x7a1254abddd616f1057123ed50b816d9e6d03ce19bfa2beb9a905d71912131b0:0"
+        },
+        "approvalType": {
+            "codeHash": "0x5920bee56487e7e82dfb872f8157a5d53c7add1953ba033261516a2ef1ab92ae",
+            "cellDep": "0x431f9fd843dcc470c8f0c305ef28519b60127f17a1166a82113ff3bec49b8a12:0"
+        },
+        "marketStateLock": {
+            "codeHash": "0x9a1b42f1c001b18e524ca766f83f8db0da351fdb5d91dc929ae9097499371ba5",
+            "cellDep": "0x0b3f2837364a2f94001ecf6028e9957bf074e8817961fe87755c8ad8c0ded49e:0"
+        }
+    },
+    "configTypeHash": "0xf8caed6fa96fea950a25899596cdcee66b79ede10f844867e73edf6b060dc3b9",
+    "cells": {
+        "marketConfig": "0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:0",
+        "assetConfigCkb": "0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:1",
+        "assetTotalsCkb": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:4",
+        "oracleCkb": "0x88d75bbca3677eae78f711a6c80bce785cd16b724d46600125ad45cf14f6ff87:0",
+        "marketState": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:0",
+        "baseVaultRusd": "0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:3",
+        "baseTokenRusd": "0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:4",
+        "ckbVault": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:3",
+        "deployerAccount": "0xada507b2ce031e66135f15e56a4871043febe6e4a4bdbbdcebf63e6c3da2e896:2",
+        "supplierPosition": "0x049882b7a102d5bd8cdf9199b5dcea6e17b81d1044ae1d95b563011b8dd5d246:1",
+        "deployerPosition": "0xada507b2ce031e66135f15e56a4871043febe6e4a4bdbbdcebf63e6c3da2e896:1"
+    },
+    "transactions": {
+        "createMarket": "0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380",
+        "createSupplierPosition": "0x7ddc0f945367f2f9e9edd3abe68f15712bf93f72882d0d572d3f061cac387832",
+        "supplyRusd": "0x049882b7a102d5bd8cdf9199b5dcea6e17b81d1044ae1d95b563011b8dd5d246",
+        "createBorrowerPosition": "0x4ef719b768bb8da5ad65d58b9096339785da800fbdfb0ec91710f4e8e0a01af7",
+        "supplyCkbCollateral": "0x9ca39f8494a3c4368b6ffadca63771537121fdcc54b9a526bbe47ca171f06490",
+        "borrowRusd": "0xcef0da2cc25b56ab642594d8a354dbc02c5d0fbfb1158d6b26fcb3b7b193ec15",
+        "oracleCrash": "0x1bf15d4c78baf84e106ceb730068e12416327ba6e722d290299e7a5708fbc7e3",
+        "absorb": "0xee7dafae208076bbda8afdfd8979fa2f346bb9a4255d1693f4e41457fb17d7fd",
+        "buyCollateral": "0xfef3caa84761d90cd21090a8bc0e3e7989c1646e75d8319754df4b8900eff1e2",
+        "deployMarketStateLock": "0x0b3f2837364a2f94001ecf6028e9957bf074e8817961fe87755c8ad8c0ded49e",
+        "migrateMarketStateLock": "0x775f780dffc812b41f7b21e692f53195a841dc2357ea80d4f3b49ac748c94451",
+        "migrateAssetTotalsLock": "0x26c3ff9b83b4fcfa56c7485eccc33b32f622c8f15d69b5acf8329f434a7a1b8b",
+        "frontendSupplyCkb": "0x36e106215321623563f3b37cb054e17039cac4fbee00202e1b5d261cc341cf21",
+        "frontendBorrow": "0xdf88ca337b67ddb03f4dbded577f68310cd80c491621bf5ce20c1c16f614a591",
+        "frontendRepay": "0xf7f3f88cd88fee3abcb6953c21151693cbed04a848b40294632ac8fa1373180f",
+        "frontendWithdraw": "0xcb74ceec31f838f9f33725777d0958b20190b8068c3a67ed8ab27c7bf6720038",
+        "deployBaseTokenLockV2": "0x1b885d13d10ba59e7a1f214cb9bd277951751ed361c4da4c997c4a0be57e94b1",
+        "createBaseTokenCustodyV2": "0x6c55aeeea3a87d1a19b5bcc64c1177f1b50d88f8e0937319a3b90dc8f63533bb",
+        "oracleRefresh": "0x88d75bbca3677eae78f711a6c80bce785cd16b724d46600125ad45cf14f6ff87",
+        "e2eSupplyRusd": "0x1c89e51fd2830676f8098e5c5fab228161f794a87bfa73eb9a9d0b9b5e058596",
+        "e2eSupplyCkb": "0x0ae545da64f69b6acba829c77c02d79ec6ec713ccc69925b79bfb656a8e0470f",
+        "e2eBorrowRusd": "0x7cfee58767f02ed4e9bbb1738522a1b52f43c2f2998b45afb3fb0456b7d00329",
+        "e2eRepayRusd": "0x94d1644a75c7a2a37694fd218fa62e5393630cfacebabe6f21df50ca0c1c414c",
+        "e2eWithdrawRusd": "0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014",
+        "e2eWithdrawCkb": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604",
+        "staticSiteE2eSupplyRusd": "0xfe3209cf57710cb10e0e2c8f3287735193b2cc8556698c8bf05ba3e497098c4c"
+    },
+    "state": {
+        "supplyIndex": "1000007600583377",
+        "borrowIndex": "1000000062375689",
+        "totalSupplyPrincipal": "159999246704",
+        "totalBorrowPrincipal": "0",
+        "totalCash": "157000000000",
+        "lastAccrualTime": 1793899107,
+        "baseVaultAmount": "167000000000",
+        "baseTokenAmount": "167000000000",
+        "totalCkbSupplied": "123900000000",
+        "ckbVaultAmount": "171268421053",
+        "ckbVaultCapacity": "471268421053",
+        "oraclePrice": "2000000",
+        "oracleExponent": -8,
+        "oracleTimestamp": 1793890577
+    },
+    "notes": [
+        "Base-token custody uses monimkt-base-token-lock v2 (0xb7cd...), which sums multiple token cells.",
+        "xUDT requires an empty WitnessArgs.inputType on token inputs; only the market state/position/vault/account inputs carry the action witness.",
+        "The v2 custody cell is the canonical RUSD token cell; older v1 custody cells are abandoned."
+    ]
+}

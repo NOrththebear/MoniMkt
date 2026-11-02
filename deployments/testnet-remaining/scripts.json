@@ -1,0 +1,66 @@
+{
+  "devnet": {},
+  "testnet": {
+    "monimkt-approval-type": {
+      "codeHash": "0x5920bee56487e7e82dfb872f8157a5d53c7add1953ba033261516a2ef1ab92ae",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x431f9fd843dcc470c8f0c305ef28519b60127f17a1166a82113ff3bec49b8a12",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-asset-config-type": {
+      "codeHash": "0xd20914d2863601569206fce44b94e3ff98e2a7c6453b519ee0e89790ba6ab283",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x7898b5c1720b5b3a5ec231f03da41614b69e3838578bc3b856fee111fbadd5fc",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-asset-totals-type": {
+      "codeHash": "0xef551fc012c9d5f1df7c89e94dd953455567e82e60c955d1c8a060b6a288b4d8",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x7a1254abddd616f1057123ed50b816d9e6d03ce19bfa2beb9a905d71912131b0",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    },
+    "monimkt-oracle-type": {
+      "codeHash": "0x0bd6c8139235be080d920271ab2afdbee9af6badc78ade2eed661f4c407a2adf",
+      "hashType": "type",
+      "cellDeps": [
+        {
+          "cellDep": {
+            "outPoint": {
+              "txHash": "0x676d2e33ddfa4960e3d9a60b7992416383f62d32dc7d6f3ac3e6a8d59b23dee8",
+              "index": 0
+            },
+            "depType": "code"
+          }
+        }
+      ]
+    }
+  },
+  "mainnet": {}
+}
