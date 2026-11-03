@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("inter-latin.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --radius: 0.5rem;
+
+  --monimkt-primary-50: #f8fafc;
+  --monimkt-primary-100: #f1f5f9;
+  --monimkt-primary-200: #e2e8f0;
+  --monimkt-primary-300: #cbd5e1;
+  --monimkt-primary-400: #94a3b8;
+  --monimkt-primary-500: #64748b;
+  --monimkt-primary-600: #475569;
+  --monimkt-primary-700: #334155;
+  --monimkt-primary-800: #1e293b;
+  --monimkt-primary-900: #0f172a;
+  --monimkt-primary-950: #020617;
+
+  --monimkt-secondary-50: #fafafa;
+  --monimkt-secondary-100: #f4f4f5;
+  --monimkt-secondary-200: #e4e4e7;
+  --monimkt-secondary-300: #d4d4d8;
+  --monimkt-secondary-400: #a1a1aa;
+  --monimkt-secondary-500: #71717a;
+  --monimkt-secondary-600: #52525b;
+  --monimkt-secondary-700: #3f3f46;
+  --monimkt-secondary-800: #27272a;
+  --monimkt-secondary-900: #18181b;
+  --monimkt-secondary-950: #09090b;
+
+  --monimkt-accent-50: #fafafa;
+  --monimkt-accent-100: #f4f4f5;
+  --monimkt-accent-200: #e4e4e7;
+  --monimkt-accent-300: #d4d4d8;
+  --monimkt-accent-400: #a1a1aa;
+  --monimkt-accent-500: #71717a;
+  --monimkt-accent-600: #52525b;
+  --monimkt-accent-700: #3f3f46;
+  --monimkt-accent-800: #27272a;
+  --monimkt-accent-900: #18181b;
+  --monimkt-accent-950: #09090b;
+
+  --monimkt-success: #10b981;
+  --monimkt-warning: #d97706;
+  --monimkt-error: #dc2626;
+
+  --monimkt-bg-primary: #0d0f14;
+  --monimkt-bg-secondary: #1a1d26;
+  --monimkt-bg-tertiary: #252836;
+  --monimkt-bg-quaternary: #2a2d36;
+
+  --monimkt-text-primary: #ffffff;
+  --monimkt-text-secondary: #e2e8f0;
+  --monimkt-text-tertiary: #94a3b8;
+  --monimkt-text-muted: #64748b;
+
+  --monimkt-border-primary: #2a2d36;
+  --monimkt-border-secondary: #334155;
+  --monimkt-border-accent: #475569;
+  --monimkt-border-focus: #64748b;
+
+  --monimkt-supply: var(--monimkt-primary-500);
+  --monimkt-borrow: var(--monimkt-warning);
+  --monimkt-withdraw: var(--monimkt-secondary-500);
+  --monimkt-repay: var(--monimkt-error);
+}
+
+@layer base {
+  * {
+    border-color: var(--monimkt-border-primary);
+  }
+
+  html {
+    background: var(--monimkt-bg-primary);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--monimkt-bg-primary);
+    color: var(--monimkt-text-primary);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--monimkt-bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--monimkt-border-secondary);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--monimkt-border-accent);
+  }
+}
+
+@layer components {
+  .monimkt-card {
+    background-color: var(--monimkt-bg-secondary);
+    border-color: var(--monimkt-border-primary);
+    color: var(--monimkt-text-primary);
+  }
+
+  .monimkt-shadow-colored {
+    box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.25);
+  }
+
+  .monimkt-shadow-colored-blue {
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+  }
+
+  .monimkt-shadow-colored-purple {
+    box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.25);
+  }
+}
+
+@keyframes monimkt-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: monimkt-fade-up 0.3s ease-out both;
+}
+
+@keyframes monimkt-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-in {
+  animation: monimkt-modal-in 0.2s ease-out both;
+}
