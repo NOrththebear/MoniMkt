@@ -17,15 +17,22 @@ Open <http://localhost:3000>. The build writes the deployable site to
 
 ## Deploy to Vercel
 
-The repository root includes `vercel.json` and `.vercelignore`.
+The repository includes `vercel.json` files for both the repository root and
+this directory.
 
-- Framework preset: **Other**
-- Install command: `if [ -d web ]; then cd web; fi; npm ci --no-audit --no-fund`
-- Build command: `if [ -d web ]; then node web/build.mjs; else node build.mjs; fi`
+Recommended project settings:
+
+- Root Directory: `web`
+- Application Preset: **Other**
+- Install command: `npm ci --legacy-peer-deps --no-audit --no-fund`
+- Build command: `node build.mjs`
 - Output directory: `dist`
 
 Import the repository into Vercel and deploy. No serverless functions are
 required, so it runs on the Hobby plan.
+
+Using `web` as the Root Directory prevents Vercel from offering to deploy the
+Rust script crates as separate services.
 
 The configuration also enables clean URLs (`/supply`, `/borrow`, etc.), a local
 font, immutable chunk caching, and baseline security headers.

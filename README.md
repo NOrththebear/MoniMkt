@@ -196,16 +196,24 @@ Open <http://localhost:3000>. The deployable output is written to `web/dist/`.
 
 ### Deploy to Vercel
 
-The repository includes a Hobby-compatible `vercel.json`:
+The repository includes Hobby-compatible Vercel configuration for both the
+repository root and the `web` directory.
 
-- Framework preset: **Other**
-- Install command: `if [ -d web ]; then cd web; fi; npm ci --no-audit --no-fund`
-- Build command: `if [ -d web ]; then node web/build.mjs; else node build.mjs; fi`
+Recommended project settings:
+
+- Root Directory: `web`
+- Application Preset: **Other**
+- Install command: `npm ci --legacy-peer-deps --no-audit --no-fund`
+- Build command: `node build.mjs`
 - Output directory: `dist`
 
-Import the repository into Vercel and deploy. The site is fully static; no
-serverless functions are required. Clean URLs, caching, and baseline security
-headers are configured in `vercel.json`.
+This avoids Vercel treating the Rust script crates as multiple services. The
+site is fully static; no serverless functions are required. Clean URLs, caching,
+and baseline security headers are configured in `web/vercel.json`.
+
+If the Root Directory is left as the repository root, the root `vercel.json`
+uses the same static build and installs from `web/`. In that case, choose the
+**Other** preset rather than the multi-service preset.
 
 For any other static host, upload the contents of `web/dist/`.
 
