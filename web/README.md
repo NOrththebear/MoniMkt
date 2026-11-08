@@ -20,7 +20,7 @@ Open <http://localhost:3000>. The build writes the deployable site to
 The repository root includes `vercel.json` and `.vercelignore`.
 
 - Framework preset: **Other**
-- Install command: `cd web && npm install`
+- Install command: `cd web && npm ci --no-audit --no-fund`
 - Build command: `node web/build.mjs`
 - Output directory: `web/dist`
 

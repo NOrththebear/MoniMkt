@@ -199,7 +199,7 @@ Open <http://localhost:3000>. The deployable output is written to `web/dist/`.
 The repository includes a Hobby-compatible `vercel.json`:
 
 - Framework preset: **Other**
-- Install command: `cd web && npm install`
+- Install command: `cd web && npm ci --no-audit --no-fund`
 - Build command: `node web/build.mjs`
 - Output directory: `web/dist`
 
