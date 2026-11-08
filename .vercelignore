@@ -6,4 +6,5 @@ build/
 node_modules/
 web/node_modules/
 web/dist/
+dist/
 *.log

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
 
 const site = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.dirname(site);
 const dist = path.join(site, "dist");
 const assets = path.join(dist, "assets");
 
@@ -49,5 +50,11 @@ execFileSync(process.execPath, [path.join(site, "build-html.mjs"), dist], {
 
 fs.copyFileSync(path.join(site, "public", "monimkt.svg"), path.join(assets, "monimkt.svg"));
 fs.copyFileSync(path.join(site, "public", "inter-latin.woff2"), path.join(assets, "inter-latin.woff2"));
+
+// Mirror the build to the repository root so Vercel can use the same output
+// directory whether the project Root Directory is the repo root or `web`.
+const rootDist = path.join(repoRoot, "dist");
+fs.rmSync(rootDist, { recursive: true, force: true });
+fs.cpSync(dist, rootDist, { recursive: true });
 
 console.log(`Built standalone site in ${dist}`);

@@ -199,9 +199,9 @@ Open <http://localhost:3000>. The deployable output is written to `web/dist/`.
 The repository includes a Hobby-compatible `vercel.json`:
 
 - Framework preset: **Other**
-- Install command: `cd web && npm ci --no-audit --no-fund`
-- Build command: `node web/build.mjs`
-- Output directory: `web/dist`
+- Install command: `if [ -d web ]; then cd web; fi; npm ci --no-audit --no-fund`
+- Build command: `if [ -d web ]; then node web/build.mjs; else node build.mjs; fi`
+- Output directory: `dist`
 
 Import the repository into Vercel and deploy. The site is fully static; no
 serverless functions are required. Clean URLs, caching, and baseline security

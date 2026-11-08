@@ -20,9 +20,9 @@ Open <http://localhost:3000>. The build writes the deployable site to
 The repository root includes `vercel.json` and `.vercelignore`.
 
 - Framework preset: **Other**
-- Install command: `cd web && npm ci --no-audit --no-fund`
-- Build command: `node web/build.mjs`
-- Output directory: `web/dist`
+- Install command: `if [ -d web ]; then cd web; fi; npm ci --no-audit --no-fund`
+- Build command: `if [ -d web ]; then node web/build.mjs; else node build.mjs; fi`
+- Output directory: `dist`
 
 Import the repository into Vercel and deploy. No serverless functions are
 required, so it runs on the Hobby plan.
