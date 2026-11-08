@@ -25,6 +25,21 @@ function connectionSigner(event) {
   return event?.connectionOwner?.value?.signerInfo?.signer ?? null;
 }
 
+class CkbWalletsController extends ccc.SignersController {
+  refresh(client, onUpdate, configs) {
+    return super.refresh(
+      client,
+      (wallets) => {
+        const filtered = wallets.filter(
+          (wallet) => !/metamask|unisat|phantom|rabby|coinbase|trust|brave/i.test(wallet.name),
+        );
+        onUpdate(filtered);
+      },
+      configs,
+    );
+  }
+}
+
 export async function initWallet(signerCallback) {
   onSignerChange = signerCallback;
   if (connector) return connector;
@@ -32,9 +47,13 @@ export async function initWallet(signerCallback) {
   connector = document.createElement("ccc-connector");
   connector.className = "monimkt-wallet-connector";
   connector.client = new ccc.ClientPublicTestnet();
+  connector.signersController = new CkbWalletsController();
   connector.name = "MoniMkt";
   connector.icon = `${window.location.origin}/assets/monimkt.svg`;
-  Object.assign(connector.style, themeStyle);
+  for (const [property, value] of Object.entries(themeStyle)) {
+    if (property.startsWith("--")) connector.style.setProperty(property, value);
+    else connector.style[property] = value;
+  }
   connector.style.display = "none";
 
   connector.addEventListener("connection", (event) => {
