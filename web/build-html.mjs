@@ -2,7 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const outDir = path.dirname(fileURLToPath(import.meta.url));
+const outDir = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.dirname(fileURLToPath(import.meta.url));
 const pages = [
   { file: "index.html", page: "home", title: "MoniMkt | CKB Lending" },
   { file: "supply.html", page: "supply", title: "Supply | MoniMkt" },

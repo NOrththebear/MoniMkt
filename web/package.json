@@ -4,8 +4,11 @@
   "private": true,
   "description": "MoniMkt native CKB lending frontend",
   "scripts": {
-    "build": "powershell -ExecutionPolicy Bypass -File ./build.ps1",
+    "build": "node build.mjs",
     "serve": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@ckb-ccc/connector": "^2.3.2",

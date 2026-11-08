@@ -4,7 +4,7 @@ import path from "node:path";
 import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 
-const root = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "dist");
 const port = Number(process.env.PORT || 3000);
 const routes = {
   "/": "index.html",

@@ -188,14 +188,26 @@ On Linux/macOS:
 ```powershell
 cd web
 npm install
-.\build.ps1
+npm run build
 node serve.mjs
 ```
 
-Open <http://localhost:3000>.
+Open <http://localhost:3000>. The deployable output is written to `web/dist/`.
 
-For static hosting, upload `web/index.html`, the other HTML pages, and
-`web/assets/`.
+### Deploy to Vercel
+
+The repository includes a Hobby-compatible `vercel.json`:
+
+- Framework preset: **Other**
+- Install command: `cd web && npm install`
+- Build command: `node web/build.mjs`
+- Output directory: `web/dist`
+
+Import the repository into Vercel and deploy. The site is fully static; no
+serverless functions are required. Clean URLs, caching, and baseline security
+headers are configured in `vercel.json`.
+
+For any other static host, upload the contents of `web/dist/`.
 
 ### Run a local devnet
 

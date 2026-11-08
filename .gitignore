@@ -8,6 +8,8 @@
 /build/
 node_modules/
 web/node_modules/
+web/dist/
+dist/
 .next/
 **/.next/
 *.tsbuildinfo

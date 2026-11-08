@@ -8,17 +8,33 @@ existing design and the CKB wallet / market behavior as a fully static app.
 ```powershell
 cd web
 npm install
-.\build.ps1
+npm run build
 node serve.mjs
 ```
 
-Open <http://localhost:3000>.
+Open <http://localhost:3000>. The build writes the deployable site to
+`web/dist/`.
 
-## Deploy
+## Deploy to Vercel
 
-Build once, then upload these to any static host:
+The repository root includes `vercel.json` and `.vercelignore`.
 
-```
+- Framework preset: **Other**
+- Install command: `cd web && npm install`
+- Build command: `node web/build.mjs`
+- Output directory: `web/dist`
+
+Import the repository into Vercel and deploy. No serverless functions are
+required, so it runs on the Hobby plan.
+
+The configuration also enables clean URLs (`/supply`, `/borrow`, etc.), a local
+font, immutable chunk caching, and baseline security headers.
+
+## Deploy to any static host
+
+Upload the contents of `web/dist/`:
+
+```text
 index.html
 supply.html
 withdraw.html
@@ -29,10 +45,9 @@ history.html
 assets/
 ```
 
-`src/`, `build.ps1`, `build-html.mjs`, `tailwind.config.ts`, and `serve.mjs` are
-build/development helpers and do not need to be uploaded.
+Source files, `node_modules/`, and build scripts are not part of the deployment.
 
-## What changed
+## What is included
 
 - No application framework runtime.
 - Initial page shell is ~48 KB JS + ~25 KB CSS + a local 48 KB Inter font.
@@ -51,7 +66,7 @@ the signer/refresh helpers. It is not exposed on deployed hostnames.
 
 The static site imports:
 
-```
+```text
 lib/ckb-market.ts
 lib/ckb-config.ts
 ```
@@ -59,5 +74,5 @@ lib/ckb-config.ts
 Rebuild after changing those files:
 
 ```powershell
-.\build.ps1
+npm run build
 ```

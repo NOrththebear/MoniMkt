@@ -1,0 +1,9 @@
+.git/
+.secrets/
+.toolchains/
+target/
+build/
+node_modules/
+web/node_modules/
+web/dist/
+*.log
