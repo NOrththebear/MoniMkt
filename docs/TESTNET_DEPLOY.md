@@ -91,7 +91,7 @@ Deployment records:
 |---|---|
 | MarketConfig | `0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:0` |
 | CKB AssetConfig | `0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:1` |
-| Oracle CKB | `0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3:0` |
+| Oracle CKB | `0x42488fce524f0ebde3e7adacdd9f7b398b1733bd508549cebbd09bd6c89c1494:0` |
 | CKB AssetTotals | `0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:4` |
 | MarketState | `0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:0` |
 | RUSD BaseVault state | `0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:3` |

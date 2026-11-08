@@ -77,7 +77,7 @@
         "marketConfig": "0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:0",
         "assetConfigCkb": "0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:1",
         "assetTotalsCkb": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:4",
-        "oracleCkb": "0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3:0",
+        "oracleCkb": "0x42488fce524f0ebde3e7adacdd9f7b398b1733bd508549cebbd09bd6c89c1494:0",
         "marketState": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:0",
         "baseVaultRusd": "0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:3",
         "baseTokenRusd": "0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:4",
@@ -114,7 +114,8 @@
         "e2eWithdrawCkb": "0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604",
         "staticSiteE2eSupplyRusd": "0xfe3209cf57710cb10e0e2c8f3287735193b2cc8556698c8bf05ba3e497098c4c",
         "oracleRealFeed": "0xd5f4176d3a5d90c0381df455f823312329cef725c809947d593acd17f037eacc",
-        "oracleDedicatedLock": "0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3"
+        "oracleDedicatedLock": "0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3",
+        "oracleKeeperUpdate": "0x42488fce524f0ebde3e7adacdd9f7b398b1733bd508549cebbd09bd6c89c1494"
     },
     "state": {
         "supplyIndex": "1000007600583377",
@@ -128,9 +129,9 @@
         "totalCkbSupplied": "123900000000",
         "ckbVaultAmount": "171268421053",
         "ckbVaultCapacity": "471268421053",
-        "oraclePrice": "94360",
+        "oraclePrice": "94191",
         "oracleExponent": -8,
-        "oracleTimestamp": 1794166381
+        "oracleTimestamp": 1794166670
     },
     "notes": [
         "Base-token custody uses monimkt-base-token-lock v2 (0xb7cd...), which sums multiple token cells.",
