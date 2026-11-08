@@ -229,11 +229,21 @@ The local devnet RPC is `http://127.0.0.1:8114`.
 
 ## Testnet operations
 
-Refresh the CKB price oracle:
+The CKB/USD oracle is maintained by the keeper in [`oracle/`](./oracle):
 
 ```powershell
-node scripts/testnet-oracle.js --price 0.02 --send
+cd oracle
+npm install
+node keeper.mjs          # dry run
+node keeper.mjs --send   # publish
 ```
+
+The keeper uses Binance, Gate.io, and CoinGecko, requires at least two valid
+feeds, and publishes the median. Source selection, safety guards, and the
+GitHub Actions schedule are documented in [`oracle/README.md`](./oracle/README.md).
+
+The scheduled workflow runs every 15 minutes and requires the repository secret
+`CKB_ORACLE_KEY`.
 
 Inspect the live market:
 
@@ -241,8 +251,8 @@ Inspect the live market:
 node scripts/inspect-testnet-market.js
 ```
 
-The oracle has a one-hour freshness window. Borrow and liquidation transactions
-are rejected with a market-config error when the feed is stale.
+The oracle has a one-hour freshness window. Borrow, collateral withdrawal, and
+liquidation transactions are rejected when the feed is stale.
 
 ## Testing and verification
 

@@ -69,6 +69,27 @@ function submitContent(label, iconName = "") {
   return iconName ? `${icon(iconName, "h-4 w-4 mr-2")}${label}` : label;
 }
 
+function oracleStatus() {
+  if (!state.market) return { age: null, stale: false, maxAge: 3600 };
+  const maxAge = Number(state.market.config?.maxOracleAge ?? 3600n);
+  const age = Math.max(0, Math.floor(Date.now() / 1000) - state.market.oracle.timestamp);
+  return { age, stale: age > maxAge, maxAge };
+}
+
+function formatAge(seconds) {
+  if (seconds < 60) return `${seconds}s`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
+  return `${(seconds / 3600).toFixed(1)}h`;
+}
+
+function oracleWarningHtml() {
+  const oracle = oracleStatus();
+  if (!oracle.stale) return "";
+  return `<div role="alert" class="rounded-lg border border-red-800/50 bg-red-950/30 p-3 text-xs text-red-300">
+    Oracle is stale (${formatAge(oracle.age)} old). Borrow, collateral withdrawal, and liquidation will fail until the keeper publishes a fresh price.
+  </div>`;
+}
+
 function shortHash(hash) {
   return hash ? `${hash.slice(0, 14)}...${hash.slice(-8)}` : "";
 }
@@ -319,7 +340,7 @@ function minimalHero() {
         </div>
       </div>
 
-      <div class="text-xs text-text-tertiary text-center">Oracle ${state.market ? `${fmt(state.market.oracle.price, 8, 2)} RUSD/CKB` : "loading"}</div>
+      <div class="text-xs text-text-tertiary text-center">Oracle ${state.market ? `${fmt(state.market.oracle.price, 8, 8)} RUSD/CKB` : "loading"}</div>
       <a href="${action.href}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors w-full h-12 bg-monimkt-success-600 hover:bg-monimkt-success-700 text-white">
         ${action.title}${icon("arrow-right", "h-4 w-4 ml-2")}
       </a>
@@ -518,7 +539,7 @@ function supplyPage() {
           </div>
           <div class="flex justify-between">
             <span class="text-gray-400">Oracle</span>
-            <span>${state.market ? `${fmt(state.market.oracle.price, 8, 2)} RUSD/CKB` : "—"}</span>
+            <span>${state.market ? `${fmt(state.market.oracle.price, 8, 8)} RUSD/CKB` : "—"}</span>
           </div>
           <div class="flex justify-between">
             <span class="text-gray-400">Health</span>
@@ -555,6 +576,8 @@ function borrowPage() {
       </div>
     </div>
 
+    ${oracleWarningHtml()}
+
     <div class="rounded-lg border bg-[#1a1d26] border-[#2a2d36] text-white">
       <div class="p-5 space-y-4">
         <div><h2 class="text-lg font-semibold">Borrow RUSD</h2><p class="text-sm text-gray-400">Borrow RUSD against your CKB collateral.</p></div>
@@ -565,7 +588,7 @@ function borrowPage() {
         <input data-field="amount" type="number" placeholder="0.0" value="${esc(state.amount)}" class="flex h-14 w-full rounded-md border border-[#2a2d36] bg-[#252836] px-3 py-2 text-lg text-white placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
         <div class="rounded-lg bg-[#252836] border border-[#2a2d36] p-3 text-sm space-y-2">
           <div class="flex justify-between"><span class="text-gray-400">Borrow APY</span><span class="text-yellow-400">${marketRates ? `${marketRates.borrowApy.toFixed(2)}%` : "—"}</span></div>
-          <div class="flex justify-between"><span class="text-gray-400">Oracle</span><span>${state.market ? `${fmt(state.market.oracle.price, 8, 2)} RUSD/CKB` : "—"}</span></div>
+          <div class="flex justify-between"><span class="text-gray-400">Oracle</span><span>${state.market ? `${fmt(state.market.oracle.price, 8, 8)} RUSD/CKB` : "—"}</span></div>
           <div class="flex justify-between"><span class="text-gray-400">Market cash</span><span>${state.market ? `${fmt(state.market.state.totalCash)} RUSD` : "—"}</span></div>
         </div>
         ${state.formError ? `<div class="text-xs text-red-400">${esc(state.formError)}</div>` : ""}
@@ -633,6 +656,7 @@ function withdrawPage() {
         <div class="text-right"><div class="text-xs text-gray-300">Health</div><div class="text-2xl font-bold">${state.user?.healthFactor == null ? "No debt" : `${state.user.healthFactor.toFixed(2)}x`}</div></div>
       </div>
     </div>
+    ${state.mode === "ckb" ? oracleWarningHtml() : ""}
     <div class="rounded-lg border bg-[#1a1d26] border-[#2a2d36] text-white">
       <div class="p-5 space-y-4">
         <div>
@@ -645,7 +669,7 @@ function withdrawPage() {
         </div>
         <input data-field="amount" type="number" placeholder="0.0" value="${esc(state.amount)}" class="flex h-14 w-full rounded-md border border-[#2a2d36] bg-[#252836] px-3 py-2 text-lg text-white placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
         <div class="rounded-lg bg-[#252836] border border-[#2a2d36] p-3 text-sm space-y-2">
-          <div class="flex justify-between"><span class="text-gray-400">Oracle</span><span>${state.market ? `${fmt(state.market.oracle.price, 8, 2)} RUSD/CKB` : "—"}</span></div>
+          <div class="flex justify-between"><span class="text-gray-400">Oracle</span><span>${state.market ? `${fmt(state.market.oracle.price, 8, 8)} RUSD/CKB` : "—"}</span></div>
           <div class="flex justify-between"><span class="text-gray-400">Debt</span><span>${fmt(state.user?.borrowedRusd ?? 0n)} RUSD</span></div>
           ${state.mode === "rusd" ? `<div class="flex justify-between"><span class="text-gray-400">RUSD wallet</span><span>${fmt(state.user?.rusdBalance ?? 0n)} RUSD</span></div>` : ""}
         </div>
@@ -687,7 +711,15 @@ function dashboardPage() {
           ${stat("Supply APY", marketRates ? `${marketRates.supplyApy.toFixed(2)}%` : "—")}
           ${stat("Borrow APY", marketRates ? `${marketRates.borrowApy.toFixed(2)}%` : "—")}
           ${stat("Utilization", marketRates ? `${marketRates.utilization.toFixed(1)}%` : "—", "present borrows / supply")}
-          ${stat("Oracle", state.market ? `${fmt(state.market.oracle.price, 8, 2)} RUSD/CKB` : "—", "CKB price feed")}
+          ${stat(
+            "Oracle",
+            state.market ? `${fmt(state.market.oracle.price, 8, 8)} RUSD/CKB` : "—",
+            state.market
+              ? oracleStatus().stale
+                ? `STALE · ${formatAge(oracleStatus().age)} old`
+                : `updated ${formatAge(oracleStatus().age)} ago`
+              : "CKB price feed",
+          )}
         </div>
         <div class="grid grid-cols-2 gap-3">
           ${stat("Total supplied", state.market ? `${fmt(state.market.state.totalSupply)} RUSD` : "—")}

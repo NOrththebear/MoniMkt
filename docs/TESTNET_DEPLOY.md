@@ -1,4 +1,4 @@
-# CKB testnet deployment status (v3-final-r2)
+﻿# CKB testnet deployment status (v3-final-r2)
 
 Live market: **v3-final-r2** at
 `0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380`.
@@ -91,7 +91,7 @@ Deployment records:
 |---|---|
 | MarketConfig | `0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:0` |
 | CKB AssetConfig | `0x8ca00bb3086bdb6dc0a0ab7504697250b1d07aa98551837f3faa0bb2e7e67380:1` |
-| Oracle CKB | `0x88d75bbca3677eae78f711a6c80bce785cd16b724d46600125ad45cf14f6ff87:0` |
+| Oracle CKB | `0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3:0` |
 | CKB AssetTotals | `0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:4` |
 | MarketState | `0x988eaaa057b2a33d1c484960ac982b1f1bcf7c8ef86b2f5ffc0a36bfb66af604:0` |
 | RUSD BaseVault state | `0xa82b98062f3ffbe9c08bd0ee4f6e608e60877d6c653ea473b093ffb8831b9014:3` |
@@ -125,6 +125,8 @@ Deployment records:
 | Deploy r2 base-token-lock | `0x1b885d13d10ba59e7a1f214cb9bd277951751ed361c4da4c997c4a0be57e94b1` | committed |
 | Create r2 custody cell | `0x6c55aeeea3a87d1a19b5bcc64c1177f1b50d88f8e0937319a3b90dc8f63533bb` | committed |
 | Refresh oracle | `0x88d75bbca3677eae78f711a6c80bce785cd16b724d46600125ad45cf14f6ff87` | committed |
+| Real CKB/USD feed migration | `0xd5f4176d3a5d90c0381df455f823312329cef725c809947d593acd17f037eacc` | committed |
+| Rotate oracle to dedicated updater lock | `0xc09a19de468edff4d4cece9347ef5a66967312afa022b7d26ada980a3b165fa3` | committed |
 | r2 e2e supply RUSD | `0x1c89e51fd2830676f8098e5c5fab228161f794a87bfa73eb9a9d0b9b5e058596` | committed |
 | r2 e2e supply CKB | `0x0ae545da64f69b6acba829c77c02d79ec6ec713ccc69925b79bfb656a8e0470f` | committed |
 | r2 e2e borrow RUSD | `0x7cfee58767f02ed4e9bbb1738522a1b52f43c2f2998b45afb3fb0456b7d00329` | committed |
@@ -157,7 +159,7 @@ CKB vault amount       1,712.68421053 CKB
 CKB vault capacity     4,712.68421053 CKB
 deployer account nonce 8
 deployer position      139.00000000 CKB collateral, 0 debt
-oracle                 0.02000000 RUSD/CKB
+oracle                 0.00094360 RUSD/CKB
 ```
 
 ## Wallet state
@@ -175,7 +177,7 @@ Mock RUSD:  985,599.00000000
 ```powershell
 node scripts/testnet-balance.js
 node scripts/inspect-testnet-market.js
-node scripts/testnet-oracle.js --price 0.02        # dry run
+cd oracle && node keeper.mjs                      # dry run
 node scripts/testnet-absorb.js                     # dry run
 node scripts/testnet-buy-collateral.js             # dry run
 ```
@@ -192,7 +194,7 @@ were exercised end-to-end.
 Remaining is production polish:
 
 - a dedicated indexer/API for scale and historical activity,
-- oracle publisher/keeper automation,
+
 - Telegram/UX polish,
 - independent audit and mainnet parameter approval.
 

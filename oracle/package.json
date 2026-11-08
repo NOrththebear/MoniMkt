@@ -1,0 +1,17 @@
+{
+  "name": "monimkt-oracle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MoniMkt CKB/USD oracle keeper",
+  "scripts": {
+    "dry-run": "node keeper.mjs",
+    "update": "node keeper.mjs --send"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "^1.23.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

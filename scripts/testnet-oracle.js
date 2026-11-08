@@ -6,7 +6,7 @@ const ccc = require("C:/Users/ADMIN/AppData/Roaming/npm/node_modules/@offckb/cli
 
 const args = process.argv.slice(2);
 const SEND = args.includes("--send");
-const priceArg = args.includes("--price") ? args[args.indexOf("--price") + 1] : "0.02";
+const priceArg = args.includes("--price") ? args[args.indexOf("--price") + 1] : "0.0009436";
 
 const ORACLE_TYPE = {
   codeHash: "0x0bd6c8139235be080d920271ab2afdbee9af6badc78ade2eed661f4c407a2adf",
@@ -50,7 +50,14 @@ function concat(...p) { return Buffer.concat(p.map((x) => Buffer.from(x))); }
   data[49] = 0xf8;
 
   const client = new ccc.ClientPublicTestnet();
-  const key = fs.readFileSync(path.join(__dirname, "..", ".secrets", "testnet-deployer.key"), "utf8").trim();
+  const key =
+    process.env.CKB_ORACLE_KEY ||
+    fs.readFileSync(
+      fs.existsSync(path.join(__dirname, "..", ".secrets", "oracle.key"))
+        ? path.join(__dirname, "..", ".secrets", "oracle.key")
+        : path.join(__dirname, "..", ".secrets", "testnet-deployer.key"),
+      "utf8",
+    ).trim();
   const signer = new ccc.SignerCkbPrivateKey(client, key);
   const address = await signer.getAddressObjSecp256k1();
   const oracleType = ccc.Script.from({
