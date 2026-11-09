@@ -59,6 +59,21 @@ manually from the Actions tab.
 > Scheduled GitHub Actions are paused after long repository inactivity. Keep the
 > repository active or run the keeper on a dedicated scheduler in production.
 
+### Current testnet fallback
+
+GitHub’s `schedule` trigger is currently not firing for this repository, even
+though manual `workflow_dispatch` runs succeed. Until a dedicated scheduler is
+attached, run the local watcher on the machine that is testing the beta:
+
+```powershell
+cd oracle
+node watch.mjs
+```
+
+It publishes immediately, then every 10 minutes, and skips overlapping runs.
+This is a testnet guard, not a production scheduler. A dedicated cron worker or
+always-on keeper should replace it before a public beta.
+
 ## Dedicated oracle key
 
 The oracle cell has been rotated to a dedicated oracle-updater lock. Only that

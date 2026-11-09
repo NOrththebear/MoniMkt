@@ -6,7 +6,8 @@
   "description": "MoniMkt CKB/USD oracle keeper",
   "scripts": {
     "dry-run": "node keeper.mjs",
-    "update": "node keeper.mjs --send"
+    "update": "node keeper.mjs --send",
+    "watch": "node watch.mjs"
   },
   "dependencies": {
     "@ckb-ccc/core": "^1.23.0"
